@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+.cursor/
+.cache/
+compile_commands.json
+node_modules/
+bun.lock
+build/

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target"                          : "ESNext",
+    "module"                          : "Preserve",
+    "moduleResolution"                : "bundler",
+    "jsx"                             : "react-jsx",
+    "allowJs"                         : true,
+    "allowImportingTsExtensions"      : true,
+    "noEmit"                          : true,
+    "strict"                          : true,
+    "skipLibCheck"                    : true,
+    "noFallthroughCasesInSwitch"      : true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl"                         : ".",
+    "paths"                           : {
+      "@/*"                           : ["./view/*"],
+      "#/*"                           : ["./asset/*"]
+    },
+    "types": ["bun-types"]
+  },
+  "include": [
+    "view/**/*.ts",
+    "view/**/*.tsx",
+    "view/**/*.d.ts",
+    "script/**/*.ts"
+  ]
+}

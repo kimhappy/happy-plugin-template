@@ -1,0 +1,6 @@
+[serve]
+cors      = true
+sourcemap = 'inline'
+
+[serve.static]
+plugins = ['bun-plugin-tailwind']

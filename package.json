@@ -1,0 +1,57 @@
+{
+  "name": "happy-plugin-template",
+  "version": "0.1.0",
+  "author": "Hwanhee Kim <kimhappyofficial@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimhappy/happy-plugin-template.git"
+  },
+  "scripts": {
+    "b": "bun i && bun script/build.ts",
+    "z": "rm -rf .cache && rm -rf node_modules && rm -f bun.lock && rm -rf build && rm -f compile_commands.json"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.3.2",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-popover": "^1.1.14",
+    "@radix-ui/react-progress": "^1.1.7",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slider": "^1.3.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-switch": "^1.2.5",
+    "bun-plugin-tailwind": "^0.0.15",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "happy-bundle": "git://github.com/kimhappy/happy-bundle.git",
+    "happy-juce": "^0.8.1",
+    "immer": "^10.1.1",
+    "lucide-react": "^0.536.0",
+    "nlohmann_json": "git://github.com/nlohmann/json.git",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/bun": "^1.2.18",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/yargs": "^17.0.33",
+    "archiver": "^7.0.1",
+    "bun-types": "^1.2.17",
+    "yargs": "^18.0.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "trustedDependencies": [
+    "happy-juce"
+  ]
+}
