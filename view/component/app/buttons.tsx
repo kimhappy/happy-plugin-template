@@ -1,19 +1,19 @@
-import * as juce       from 'happy-juce'
-import { Button      } from '@/component/ui/button'
-import { useCntStore } from '@/store/cnt'
+import { callNativeFunction, sendEvent } from 'happy-juce'
+import { Button                        } from '@/component/ui/button'
+import { useCntStore                   } from '@/store/cnt'
 
 export const Buttons = () => {
   const { value, increment } = useCntStore()
 
   const handleNativeFunctionCall = async () => {
-    const result = await juce.callNativeFunction('nativeFunction', 'one', 2, null)
+    const result = await callNativeFunction('nativeFunction', 'one', 2, null)
     console.log('handleNativeFunctionCall:', result)
   }
 
   const handleEmitEvent = () => {
     increment()
 
-    juce.sendEvent('exampleJsEvent', {
+    sendEvent('exampleJsEvent', {
       emittedCount: value
     })
   }

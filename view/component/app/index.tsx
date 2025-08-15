@@ -1,11 +1,11 @@
-import * as juce         from 'happy-juce'
-import { useEffect     } from 'react'
-import { Info          } from './info'
-import { Buttons       } from './buttons'
-import { Controls      } from './controls'
-import { Meter         } from './meter'
-import { Separator     } from '@/component/ui/separator'
-import { useMeterStore } from '@/store/meter'
+import { Info                                                 } from './info'
+import { Buttons                                              } from './buttons'
+import { Controls                                             } from './controls'
+import { Meter                                                } from './meter'
+import { useEffect                                            } from 'react'
+import { addEventReceiver, removeEventReceiver, fetchResource } from 'happy-juce'
+import { Separator                                            } from '@/component/ui/separator'
+import { useMeterStore                                        } from '@/store/meter'
 
 export const App = () => {
   const { setOutputLevels } = useMeterStore()
@@ -16,7 +16,7 @@ export const App = () => {
     }
 
     const handleOutputLevel = async () => {
-      const resource = await juce.fetchResource('outputLevel.json')
+      const resource = await fetchResource('outputLevel.json')
 
       if (resource) {
         const levelData = await resource.json() as { levels: number[] }
@@ -24,12 +24,12 @@ export const App = () => {
       }
     }
 
-    const exampleEventId = juce.addEventReceiver('exampleEvent', handleExampleEvent)
-    const outputLevelId  = juce.addEventReceiver('outputLevel' , handleOutputLevel )
+    const exampleEventId = addEventReceiver('exampleEvent', handleExampleEvent)
+    const outputLevelId  = addEventReceiver('outputLevel' , handleOutputLevel )
 
     return () => {
-      juce.removeEventReceiver(exampleEventId)
-      juce.removeEventReceiver(outputLevelId )
+      removeEventReceiver(exampleEventId)
+      removeEventReceiver(outputLevelId )
     }
   }, [])
 

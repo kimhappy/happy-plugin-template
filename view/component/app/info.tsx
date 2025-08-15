@@ -1,4 +1,4 @@
-import * as juce from 'happy-juce'
+import { INIT_DATA } from 'happy-juce'
 import {
   Table      ,
   TableBody  ,
@@ -21,7 +21,7 @@ export const Info = () => (
       </TableHeader>
       <TableBody>
         {
-          Object.entries(juce.INIT_DATA).map(([key, value], index) => (
+          Object.entries(INIT_DATA).map(([key, value], index) => (
             <TableRow key = { index }>
               <TableCell>{ key   }</TableCell>
               <TableCell>{ value }</TableCell>
